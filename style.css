@@ -1,5 +1,5 @@
 .carousel {
-    max-width: 500px;
+    max-width: 1000px;
     margin: 0 auto;
     border: 1px solid black;
     aspect-ratio: 16/9;
@@ -39,11 +39,12 @@
 }
 
 .text-container {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    position: relative;
+    left: 0px;
+    bottom: 100px;
     color: white;
     transition: opacity 0.7s;
     font-size: .8rem;
     text-align: end;
+    background-color: rgba(0, 0, 0, 0.481);
 }
