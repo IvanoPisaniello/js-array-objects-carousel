@@ -56,7 +56,7 @@ rightBtn.addEventListener("click", function () {
     // contatore dell'indice degli elementi
     currentImageIndex++;
 
-    if (images > imageElement.length - 1) {
+    if (currentImageIndex > imageElement.length - 1) {
         currentImageIndex = 0;
     }
 
@@ -84,4 +84,16 @@ leftBtn.addEventListener("click", function () {
 
     imageElement[currentImageIndex].classList.add("active");
 });
+
+
+function autoCarousel() {
+    setInterval(() => {
+        images[currentImageIndex].classList.remove('active');
+
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+
+        images[currentImageIndex].classList.add('active');
+    }, 3000);
+}
+
 
