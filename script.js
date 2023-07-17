@@ -86,14 +86,42 @@ leftBtn.addEventListener("click", function () {
 });
 
 
-function autoCarousel() {
-    setInterval(() => {
-        images[currentImageIndex].classList.remove('active');
+// function autoCarousel() {
+//     setInterval(() => {
+//         //seleziono gli elementi che hanno la stessa classe e le salvo in una const
+//         const imageElement = document.querySelectorAll(".image-container");
 
-        currentImageIndex = (currentImageIndex + 1) % images.length;
+//         //qui vado a rimuovere l'active, in modo tale che all'addeventlistener cliccando va a rimuovere l'active all'indice 0
+//         imageElement[currentImageIndex].classList.remove("active");
 
-        images[currentImageIndex].classList.add('active');
-    }, 3000);
-}
+//         // contatore dell'indice degli elementi
+//         currentImageIndex++;
+
+//         if (currentImageIndex > imageElement.length - 1) {
+//             currentImageIndex = 0;
+//         }
+//         console.log("ogni 3 secondi")
+//         // Siccome ora currentImageIndex ha un numero diverso da prima, lo uso per assegnare la classe active
+//         imageElement[currentImageIndex].classList.add("active");
+//     }, 3000);
+// }
 
 
+setInterval(function () {
+    console.log("ogni 3 secondi")
+
+    const imageElement = document.querySelectorAll(".image-container");
+
+    //qui vado a rimuovere l'active, in modo tale che all'addeventlistener cliccando va a rimuovere l'active all'indice 0
+    imageElement[currentImageIndex].classList.remove("active");
+
+    // contatore dell'indice degli elementi
+    currentImageIndex++;
+
+    if (currentImageIndex > imageElement.length - 1) {
+        currentImageIndex = 0;
+    }
+    console.log("ogni 3 secondi")
+    // Siccome ora currentImageIndex ha un numero diverso da prima, lo uso per assegnare la classe active
+    imageElement[currentImageIndex].classList.add("active");
+}, 3000);
